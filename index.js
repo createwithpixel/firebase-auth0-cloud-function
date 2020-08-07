@@ -54,7 +54,7 @@ app.post('/', (req, res) => {
             });
 
             // Response must be an object or Firebase errors
-            res.json({ firebaseToken: customToken })
+            return res.json({ firebaseToken: customToken })
         })
         .catch(err =>
             res.status(500).send({
