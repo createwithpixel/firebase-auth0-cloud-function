@@ -1,0 +1,4 @@
+# firebase/.gitignore
+*
+*/
+!.gitignore
