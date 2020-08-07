@@ -11,7 +11,7 @@ Firebase Cloud Function for Auth0 integration with custom tokens.
 ```
 module.exports = {
     AUTH0_DOMAIN: '<YOUR AUTH0 APP DOMAIN>', // e.g., you.auth0.com
-    AUTH0_API_AUDIENCE: '<YOU AUTH0 API AUDIENCE URL>', // e.g., http://localhost:1337/
+    AUTH0_API_AUDIENCE: '<YOUR AUTH0 API AUDIENCE URL>', // e.g., http://localhost:1337/
     FIREBASE_KEY: './firebase/service-account.json',
     FIREBASE_DB: 'https://<YOUR PROJECT>.firebaseio.com' // e.g., https://your-project.firebaseio.com
 };
