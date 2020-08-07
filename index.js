@@ -43,15 +43,13 @@ admin.initializeApp({
 app.post('/', (req, res) => {
     // Create UID from authenticated Auth0 user
     const uid = req.user.sub;
-    const userData = { email: req.user.email, name: req.user.name };
+    const userData = { email: req.user.email, displayName: req.user.name };
+
     // Mint token using Firebase Admin SDK
     admin.auth().createCustomToken(uid)
         .then(customToken => {
-            // Update email and displayName
-            admin.auth().updateUser(uid, {
-                email: req.user.email,
-                displayName: req.user.name
-            });
+            // Update email and displayName (This doesnt work for some reason...)
+            admin.auth().updateUser(uid, userData);
 
             // Response must be an object or Firebase errors
             return res.json({ firebaseToken: customToken })
